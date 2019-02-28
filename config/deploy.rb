@@ -28,6 +28,9 @@ set :rbenv_type, :system
 #本番環境用のものであれば、 :info程度が普通。ただし挙動をしっかり確認したいのであれば :debug に設定する。
 set :log_level, :info
 
+#kill コマンドが効かないのは権限の関係らしい？
+set :bundle_flags, "--quiet"
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
